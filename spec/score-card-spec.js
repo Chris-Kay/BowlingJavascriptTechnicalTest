@@ -33,4 +33,12 @@ describe('The bowling scorecard', function() {
 
 		expect(scoreCard.getScore()).toBe(22);	
 	});
+
+	it('registers a perfect game', function() {
+		for(i = 0; i < 13; i++) {
+			scoreCard.bowl(10);
+		}
+		expect(scoreCard.getScore()).toBe(300);
+
+	})
 });
