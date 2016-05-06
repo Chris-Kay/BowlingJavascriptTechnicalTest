@@ -25,4 +25,12 @@ describe('The bowling scorecard', function() {
 
 		expect(scoreCard.getScore()).toBe(14);	
 	});
+
+	it('registers a strike', function() {
+		scoreCard.bowl(10);
+		scoreCard.bowl(3); // 3 * 2
+		scoreCard.bowl(3); // 3 * 2
+
+		expect(scoreCard.getScore()).toBe(22);	
+	});
 });

@@ -9,6 +9,10 @@ function isSpare(round, i) {
 	return round[i] + round[i + 1] === 10
 }
 
+function isStrike(round, i) {
+	return round[i] === 10;
+}
+
 function getScore() {
 	var score = 0,
 	i = 0;
@@ -17,7 +21,11 @@ function getScore() {
 		if(isSpare(round, i)) {
 			score += 10 + round[i + 2];
 			i += 2;
-		} else {
+		} else if(isStrike(round, i)) {
+			score += 10 + round[i + 1] + round[i + 2];
+			i += 1;
+		} 
+		else {
 			// Open Frame
 			score += round[i] + round[i + 1];
 			i += 2;
