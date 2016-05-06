@@ -39,6 +39,12 @@ describe('The bowling scorecard', function() {
 			scoreCard.bowl(10);
 		}
 		expect(scoreCard.getScore()).toBe(300);
+	});
 
-	})
+	it('stops counting after the game has finished', function() {
+		for(i = 0; i < 18; i++) {
+			scoreCard.bowl(10);
+		}
+		expect(scoreCard.getScore()).toBe(300);
+	});
 });

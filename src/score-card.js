@@ -14,10 +14,10 @@ function isStrike(round, i) {
 }
 
 function getScore() {
-	var score = 0,
-	i = 0;
+	var i = 0;
 
-	for(var frame = 0; frame < 10; frame+=1) {
+	//Allows as many bowls but only counts 10 frames plus any extra for strikes/spares
+	for(var frame = 0; frame < 10; frame+=1) { 
 		if(isSpare(round, i)) {
 			score += 10 + round[i + 2];
 			i += 2;
